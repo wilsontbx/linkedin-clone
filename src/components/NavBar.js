@@ -7,44 +7,39 @@ import { Button } from "@material-ui/core";
 import "./NavBar.css";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
     },
-    title: {
-        flexGrow: 1,
-        display: "none",
-        [theme.breakpoints.up("sm")]: {
-            display: "block",
-        },
-    },
-    colorDefault: {},
+  },
+  colorDefault: {},
 }));
 
 export default function NavBar() {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div>
-            <AppBar
-                position="static"
-                style={{ background: "white", color: "#2967BC" }}
-            >
-                <Toolbar>
-                    <Typography
-                        className={classes.title}
-                        variant="h5"
-                        bold
-                        noWrap
-                    >
-                        Linkedin
-                    </Typography>
+  return (
+    <div>
+      <AppBar position="static" elevation={0} style={{ background: "white" }}>
+        <Toolbar>
+          <Typography className={classes.title} style={{ color: "#0D5BBA" }}>
+            <h1>
+              Linked
+              <span className="logo">in</span>
+            </h1>
+          </Typography>
 
-                    <Button color="primary">Primary</Button>
-                    <Button variant="outlined" color="primary">
-                        Primary
-                    </Button>
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
+          <Button color="primary">Join now</Button>
+          <Button variant="outlined" color="primary">
+            Sign in
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
